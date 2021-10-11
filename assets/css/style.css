@@ -1,0 +1,151 @@
+:root {
+    --main-background: hsl(233, 47%, 7%);
+    --background-card: hsl(244, 38%, 16%);
+    --overlay-image: hsl(277, 64%, 61%);
+    --main-heading: hsl(0, 0%, 100%);
+    --stat-headings: hsla(0, 0%, 100%, 0.6);
+    --main-paragraph: hsla(0, 0%, 100%, 0.75);
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-background);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.card--container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 85%;
+    margin: 0 auto;
+}
+
+.info--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--background-card);
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+
+.info--header, .info--title, .info--description {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.info--header {
+    padding-top: 4em;
+}
+
+.info--header h1 {
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.info--header span {
+    color: var(--overlay-image);
+}
+
+.info--title {
+    padding: 2em 0;
+}
+
+.info--title h2 {
+    font-size: 1em;
+    color: var(--stat-headings);
+}
+
+.info--description {
+    padding: 3em 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.image--container {
+    position: relative;
+}
+
+.image--container__overlay {
+    position: absolute;
+    background-color: rgba(208, 19, 212, 0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+
+.image--container img {
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+
+.info--description__item h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.info--description__item p {
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--stat-headings);
+    padding-top: .5em;
+}
+
+@media(max-width:420px) {
+    .card--container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .info--container {
+        text-align: center;
+        border-bottom-right-radius: 0.5em;
+        border-bottom-left-radius: 0.5em;
+    }
+    .info--header, .info--title, .info--description {
+        width: 100%;
+    }
+    .info--header {
+        padding-top: 2em;
+    }
+    .info--description {
+        flex-direction: column;
+        padding: 1em 0;
+    }
+    .image--container__overlay, .image--container img {
+        border-top-right-radius: 0.5em;
+        border-top-left-radius: 0.5em;
+    }
+}
